@@ -1,0 +1,55 @@
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Helvetica Neue";
+    background-color: #fff;
+}
+
+div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    color: blue;
+}
+
+div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 50px;
+    background-color: red;
+    animation: move 2s linear infinite;
+    z-index: -1;
+}
+
+div span {
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: calc(100% - 80px);
+    }
+    100% {
+        left: 0;
+    }
+}
